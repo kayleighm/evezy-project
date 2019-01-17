@@ -20,6 +20,9 @@ class CarListView(ListView):
     model = Car
     template_name = "car_list.html"
 
+    def queryset(self):
+        return Car.objects.filter(is_available=True)
+        
 class CarDetailView(DetailView):
     model = Car
     template_name = "car_detail.html"

@@ -10,6 +10,7 @@ class Car(models.Model):
     vin = models.CharField(max_length=17, blank=True, null=True)
     make = models.CharField(max_length=50, blank=True, null=True)
     car_model = models.CharField(max_length=100, blank=True, null=True)
+    is_available = models.BooleanField(default=True)
     
     def __str__(self):
         return self.reg_number + " " + self.make + " " + self.car_model
