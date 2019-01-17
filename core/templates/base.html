@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}EVezy Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="/logout/">Logout</a>
+            {% else %}
+                <a href="/login/">Login</a>
+            {% endif %}
+        </div>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
