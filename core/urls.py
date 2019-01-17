@@ -6,4 +6,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.LoginView.as_view()),
     url(r'^logout/$', auth_views.LogoutView.as_view()),
     url(r'^signup/$', views.SignUpView.as_view()),
+    url(r'^$', views.CarListView.as_view(), name='index'),
+    url(r'^cars/$', views.CarListView.as_view(), name="cars"),
+    url(r'^cars/(?P<pk>[-\d]+)/$', views.CarDetailView.as_view(), name='car-detail'),
 ]
