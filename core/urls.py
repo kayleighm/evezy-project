@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^cars/(?P<pk>[-\d]+)/$', views.CarDetailView.as_view(), name='car-detail'),
     url(r'^cars/(?P<car_pk>[-\d]+)/book/$', views.BookingView.as_view()),
     url(r'^booking/(?P<pk>[-\d]+)/confirmation/$', views.BookingConfirmationView.as_view()),
+    url(r'^bookings/$', views.UserBookingList.as_view()),
 ]

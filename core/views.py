@@ -22,7 +22,7 @@ class CarListView(ListView):
 
     def queryset(self):
         return Car.objects.filter(is_available=True)
-        
+
 class CarDetailView(DetailView):
     model = Car
     template_name = "car_detail.html"
@@ -53,3 +53,11 @@ class BookingView(CreateView):
 class BookingConfirmationView(DetailView):
     template_name = "booking_confirmation.html"
     model = Booking
+
+@method_decorator(login_required, name='dispatch')
+class UserBookingList(ListView):
+    model = Booking
+    template_name = "user_booking_list.html"
+
+    def queryset(self):
+        return Booking.objects.filter(driver=self.request.user)

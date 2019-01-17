@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Your Bookings {% endblock %}
+
+{% block content %}
+    <h1>Your Bookings</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Registration</th>
+                <th>Booking Start</th>
+                <th>Booking End</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in object_list %}
+                <tr>
+                    <td>{{booking.car.make}}</td>
+                    <td>{{booking.car.car_model}}</td>
+                    <td>{{booking.car.reg_number}}</td>
+                    <td>{{booking.start_time}}</td>
+                    <td>{{booking.end_time}}</td>
+                </tr></li>
+            {% empty %}
+                <tr>
+                    <td>You have no bookings yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+{% endblock %}
