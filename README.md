@@ -11,8 +11,11 @@ Python 2.7
 #### Starting the project
 Assuming you are in your virtual environment:
 `$ git clone https://github.com/Jorzakay/evezy-project.git`
+
 `$ cd evezy-project`
+
 `$ pip install -r requirements.txt`
+
 `$ python manage.py runserver`
 
 In your browser, visit localhost:8000 to view the website.
