@@ -7,11 +7,16 @@
     <body>
         <div class="container">
             <div>
-                {% if user.is_authenticated %}
-                    <a href="/logout/">Logout</a>
-                {% else %}
-                    <a href="/login/">Login</a>
-                {% endif %}
+                <ul>
+                    <li><a href="/cars/">Cars</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="/bookings/">View bookings</a></li>
+                        <li><a href="/logout/">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login/">Login</a></li>
+                    {% endif %}
+                </ul>
+                
             </div>
             <div>
                 {% block content %}{% endblock %}

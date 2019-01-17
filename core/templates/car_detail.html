@@ -4,9 +4,11 @@
 
 {% block content %}
 
-{{object.make}}
-
-{{object.car_model}}
-
-<a href="/cars/{{object.pk}}/book/">Book</a>
+<div>
+    <h3>{{object.make}} {{object.car_model}}</h3>
+    <p>{{object.reg_number}}</p>
+</div>
+<div>
+    <a href="/cars/{{object.pk}}/book/">Book</a>
+</div>
 {% endblock %}
