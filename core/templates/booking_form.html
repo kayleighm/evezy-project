@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Book {% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{ form.start_time.errors }}
+            <label for="{{ form.start_time.id_for_label }}">Start Time:</label>
+            {{ form.start_time }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.end_time.errors }}
+            <label for="end_time{{ form.end_time.id_for_label }}">End Time:</label>
+            {{ form.end_time }}
+        </div>
+        {{form.driver.as_hidden}}
+        {{form.car.as_hidden}}
+        <input type="submit" value="Book">
+</form>
+{% endblock %}

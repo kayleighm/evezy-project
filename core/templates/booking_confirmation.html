@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Booking Confirmation {% endblock %}
+
+{% block content %}
+    <h1>Booking Confirmation</h1>
+    {{object.car.make}}
+
+    {{object.car.car_model}}
+
+    Start: {{object.start_time}}
+
+    End: {{object.end_time}}
+
+{% endblock %}

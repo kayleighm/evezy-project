@@ -121,4 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/cars/"
 LOGOUT_REDIRECT_URL = "/login/"
+
+DATE_INPUT_FORMATS = ['%Y-%m-%d', '%d/%m/%Y','%d/%m/%y',]
